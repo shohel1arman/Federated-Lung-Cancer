@@ -1,4 +1,4 @@
-# Federated Learning Framework for Lung Cancer Detection 🫁🩺
+# Federated Learning Framework for Lung Cancer Detection
 
 A privacy-preserving **Federated Learning (FL)** system designed for the classification of Lung CT scans. Built with **PyTorch** and **Flower (flwr)**, this project integrates **Explainable AI (XAI)** metrics directly into the validation loop to ensure model reliability and faithfulness across distributed clients.
 
@@ -62,14 +62,14 @@ The system expects data to be organized by class folders. The `dataloder.py` scr
 └── Normal cases/
     ├── image_01.jpg
     └── ...
-
+```
 🚀 Usage
-1. Start the Server
+### 1. Start the Server
 Run the server first. It will wait for the specified number of clients to connect.
 
 ````bash
 python server.py --rounds 10 --min-clients 2 --model customcnn
-```
+````
 --rounds: Number of federated learning rounds.
 
 --min-clients: Minimum clients required to start a round.
@@ -82,12 +82,12 @@ Open separate terminals for each client. Ensure client-id is unique.
 ### Client 1
 ````bash
 python client.py --client-id 1 --data-dir "path/to/dataset" --server-address "localhost:8080"
-```
+````
 
-### Client 1
+### Client 2
 ````bash
 python client.py --client-id 2 --data-dir "path/to/dataset" --server-address "localhost:8080"
-```
+````
 
 📈 Outputs & Results
 Results are saved in the Result directory, organized by session timestamp.
